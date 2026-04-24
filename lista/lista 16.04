@@ -1,0 +1,75 @@
+from time import sleep
+from colorama import Fore
+inscricao = ""
+lista = []
+while inscricao != 2:
+    print(Fore.LIGHTMAGENTA_EX +"Bem-vindo(a)! Gostaria de realizar sua inscrição?")
+    print("[1] Sim")
+    print("[2] Não")
+    print()
+    sleep(1)
+    inscricao = int(input("Resposta do usuário: "))
+    print()
+    if inscricao == 1:
+        sleep(1)
+        print("[1] Cadastrar nome")
+        print("[2] Verificar nome no sistema")
+        print("[3] Desfazer cadastro")
+        print("[4] Número de inscritos")
+        print("[0] Sair")
+        print()
+        opcao = int(input("Informe o que deseja realizar: ")) 
+        if opcao == 1:
+            print()
+            nome = input("Informe seu nome: ")
+            if nome in lista:
+                print(f"Seu nome é {nome} e já está inserido no sistema.")
+            else:
+                lista.append(nome)
+                sleep(1)
+                print(f"Olá {nome}, seu cadastro foi concluído com sucesso.")
+                print()
+        elif opcao == 2:
+            print()
+            nome = input("Informe seu nome: ")
+            if nome in lista:
+                sleep(1)
+                print("Seu cadastro ja foi concluído.")
+                print()
+            else:
+                print("Seu nome não foi encontrado, reinicie o sistema para concluir seu cadastro.")
+        elif  opcao == 3:
+            print()
+            nome = input("Informe seu nome: ")
+            if nome in lista:
+                sleep(1)
+                print()
+                print("Nome encontrado! Deseja removê-lo?")
+                print("[1] Sim")
+                print("[2] Não")
+                print()
+                resposta = int(input("Informe a ação que deseja realizar: "))
+                if resposta == 1:
+                    lista.remove(nome)
+                    print("Seu nome foi retirado com sucesso!")
+            else:
+                    print("O nome não foi encontrado, deseja adicioná-lo?")
+                    print("[1] Sim")
+                    print("[2] Não")
+                    resposta1 = int(input("Informe a ação que deseja realizar: "))
+                    if resposta1 == 1:
+                        lista.append(nome)
+                        print(f"Olá {nome}, seu cadastro foi concluído com sucesso.")
+        elif opcao == 4:
+              len(lista)
+              print(f'Existem {len(lista)} inscritos')
+              lista.sort()
+              for lista in lista:
+                  print()
+                  print(lista)
+        else:
+            sleep(1)
+            print("Saindo...")
+            sleep(1)
+            print("Você saiu do sistema.")
+            print()

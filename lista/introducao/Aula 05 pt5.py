@@ -1,0 +1,6 @@
+nome = input("Selecione um contato: ")
+print(f"Digitando para {nome} ...")
+texto = input("Digite sua mensagem: ")
+print(f"Você: {texto}")
+print("visto há pouco")
+print(f"vc foi bloqueado(a) por {nome}")
